@@ -12,6 +12,9 @@ export class User {
   @Column({ unique: true })
   email: string;
 
+  @Column({ select: false })
+  password: string;
+
   @OneToMany(() => Todo, (todo) => todo.user)
   todos: Todo[];
 }
